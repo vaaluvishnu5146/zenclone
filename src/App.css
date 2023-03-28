@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+.app-container {
+  margin: 0px auto;
+  max-width: 1280px;
+  width: 100%;
+  background: #f7f7f7;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.zen-header {
+  width: 100%;
+  height: 80px;
+  background: #ffffff;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.zen-sub-journey-container {
+  display: flex;
+  justify-content: space-around;
+  min-width: 300px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.zen-sub-journey-container > a {
+  color: black;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 80px;
+}
+
+.zen-content-area-container {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+}
+
+.zen-sidebar {
+  width: 20%;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.zen-sidebar > .sidebar-header-branding {
+  display: flex;
+  align-items: center;
+}
+
+.zen-sidebar-nav > ul {
+  margin: 0px;
+  list-style-type: none;
+  padding: 0px;
+}
+
+.zen-sidebar-nav > ul > li {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(95, 158, 160, 0.478);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.zen-sidebar-nav > ul > li:hover {
+  color: #ffffff;
+  font-weight: 600;
+  background-color: rgba(95, 158, 160, 0.97);
+}
+
+.zen-content-area {
+  width: 100%;
+  height: 100%;
+  background-color: aquamarine;
 }
