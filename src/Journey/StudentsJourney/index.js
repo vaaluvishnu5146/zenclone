@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import Appheader from "../../Components/AppHeader/Appheader";
+import AuthContextProvider from "../../Context/AuthContext";
 
 const routes = [
   {
@@ -17,9 +18,9 @@ const routes = [
 
 export default function index() {
   return (
-    <div>
+    <>
       <Appheader journeyName="Students journey" routes={routes} />
       <Outlet />
-    </div>
+    </>
   );
 }

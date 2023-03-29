@@ -3,8 +3,11 @@ import "./App.css";
 import CreateStudents from "./Journey/StudentsJourney/CreateStudents";
 import ManageStudents from "./Journey/StudentsJourney/ManageStudents";
 import StudentsJourney from "./Journey/StudentsJourney/index";
+import MentorsJourney from "./Journey/MentorsJourney/index";
+import AuthContextProvider, { useAuth } from "./Context/AuthContext";
 
 function App() {
+  const { role = "" } = useAuth();
   return (
     <div id="zen-landing-page-container" className="app-container">
       <div
@@ -25,7 +28,11 @@ function App() {
               <li>
                 <Link to="/students">Student Journey</Link>
               </li>
-              <li>Mentor Journey</li>
+              {role === "mentor" && (
+                <li>
+                  <Link to="/mentors">Mentor Journey</Link>
+                </li>
+              )}
               <li>Session Journey</li>
             </ul>
           </nav>
@@ -36,6 +43,9 @@ function App() {
               <Route path="create" Component={CreateStudents} />
               <Route path="manage" Component={ManageStudents} />
             </Route>
+            {role === "mentor" && (
+              <Route path="mentors" Component={MentorsJourney} />
+            )}
           </Routes>
         </div>
       </div>
