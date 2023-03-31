@@ -15,6 +15,7 @@ export default function TodoComponent() {
     let todosCopy = [...todos];
     todosCopy.push(todo);
     setTodos(todosCopy);
+    setTodo("");
   }
 
   return (
@@ -24,6 +25,7 @@ export default function TodoComponent() {
           id="todo"
           placeholder="Enter your task"
           onChange={(e) => setTodo(e.target.value)}
+          value={todo}
         />
         <button onClick={handleTodo}>Add Task</button>
       </div>

@@ -1,5 +1,6 @@
 import "./App.css";
 import TodoComponent from "./Components/TodoComponent";
+import TeamDetails from "./Pages/TeamDetails";
 /**
  * FUNCTIONAL COMPONENT SYNTAX
  * HOOKS
@@ -18,7 +19,7 @@ import TodoComponent from "./Components/TodoComponent";
 function App() {
   return (
     <div id="zen-landing-page-container" className="app-container">
-      <TodoComponent />
+      <TeamDetails />
     </div>
   );
 }

@@ -87,3 +87,13 @@
   align-items: center;
   justify-content: center;
 }
+
+/* IPL_TEAM_DETAILS_PAGE */
+.team-details-table-container {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.team-banner-image {
+  width: 100%;
+}
