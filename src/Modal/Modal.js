@@ -6,6 +6,7 @@ import { TeamsPlaying } from "../mocks/mock";
 export default function SimpleModal({
   handleChange = (e) => {},
   handleSubmit = (e) => {},
+  data = {},
 }) {
   return (
     <div>
@@ -45,6 +46,7 @@ export default function SimpleModal({
                 label="Player Name"
                 type="text"
                 onChange={handleChange}
+                value={data["playerName"]}
               />
               <BasicTextField
                 id="playerCountry"
@@ -52,6 +54,7 @@ export default function SimpleModal({
                 label="Player Country"
                 type="text"
                 onChange={handleChange}
+                value={data["playerCountry"]}
               />
               <div className="row">
                 <div className="col-6">
@@ -63,6 +66,7 @@ export default function SimpleModal({
                     aria-label="Default select example"
                     onChange={handleChange}
                     id="playerTeam"
+                    value={data["playerTeam"]}
                   >
                     <option selected>Select Team</option>
                     {TeamsPlaying.map((team, index) => (
@@ -82,6 +86,7 @@ export default function SimpleModal({
                     label="Jersey Number"
                     type="number"
                     onChange={handleChange}
+                    value={data["jerseyNumber"]}
                   />
                 </div>
               </div>
@@ -91,21 +96,29 @@ export default function SimpleModal({
                   onChange={handleChange}
                   label="BATSMAN"
                   id="batsman"
+                  checked={
+                    data["skills"].indexOf("batsman") > -1 ? true : false
+                  }
                 />
                 <BasicChecks
                   onChange={handleChange}
                   label="BOWLER"
                   id="bowler"
+                  checked={data["skills"].indexOf("bowler") > -1 ? true : false}
                 />
                 <BasicChecks
                   onChange={handleChange}
                   label="WICKET KEEPER"
                   id="keeper"
+                  checked={data["skills"].indexOf("keeper") > -1 ? true : false}
                 />
                 <BasicChecks
                   onChange={handleChange}
                   label="All ROUNDER"
                   id="allrounder"
+                  checked={
+                    data["skills"].indexOf("allrounder") > -1 ? true : false
+                  }
                 />
               </div>
               <BasicTextField
@@ -114,6 +127,7 @@ export default function SimpleModal({
                 label="Auction Amount"
                 type="number"
                 onChange={handleChange}
+                value={data["auctionAmount"]}
               />
             </div>
             <div class="modal-footer">

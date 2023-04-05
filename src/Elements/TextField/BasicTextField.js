@@ -6,6 +6,7 @@ export default function BasicTextField({
   type = "",
   placeholder = "",
   onChange = (e) => {},
+  value = "",
 }) {
   return (
     <div class="mb-3">
@@ -18,6 +19,7 @@ export default function BasicTextField({
         id={id}
         placeholder={placeholder}
         onChange={onChange}
+        value={value}
       />
     </div>
   );

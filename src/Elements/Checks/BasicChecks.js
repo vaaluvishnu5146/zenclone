@@ -5,6 +5,7 @@ export default function BasicChecks({
   value = "",
   label = "",
   onChange = (e) => {},
+  checked = false,
 }) {
   return (
     <div className="form-check form-check-inline">
@@ -14,6 +15,7 @@ export default function BasicChecks({
         value={value}
         id={id}
         onChange={onChange}
+        checked={checked}
       />
       <label className="form-check-label" for={id}>
         {label}
