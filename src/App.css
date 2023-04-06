@@ -4,86 +4,56 @@
   width: 100%;
   background: #f7f7f7;
   height: 100vh;
-}
-
-.zen-header {
-  width: 100%;
-  height: 80px;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.zen-sub-journey-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-width: 300px;
-}
-
-.zen-sub-journey-container > a {
-  color: black;
-  text-decoration: none;
-}
-
-.brand-logo {
-  width: 80px;
-}
-
-.zen-content-area-container {
-  width: 100%;
-  height: calc(100vh - 80px);
-  display: flex;
-}
-
-.zen-sidebar {
-  width: 20%;
-  height: 100%;
-  background-color: #ffffff;
-}
-
-.zen-sidebar > .sidebar-header-branding {
-  display: flex;
-  align-items: center;
-}
-
-.zen-sidebar-nav > ul {
-  margin: 0px;
-  list-style-type: none;
-  padding: 0px;
-}
-
-.zen-sidebar-nav > ul > li {
-  width: 100%;
-  height: 50px;
-  background-color: rgba(95, 158, 160, 0.478);
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.zen-sidebar-nav > ul > li:hover {
-  color: #ffffff;
-  font-weight: 600;
-  background-color: rgba(95, 158, 160, 0.97);
-}
-
-.zen-content-area {
-  width: 100%;
-  height: 100%;
-  background-color: aquamarine;
-}
-
-/* NAVBAR PROFILE CIRCLE */
-.profile-circle {
-  width: 50px;
-  height: 50px;
-  background-color: aquamarine;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.tic-tac-toe-grid-container {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tic-tac-toe-grid-container > .game-button {
+  width: 33.33%;
+  height: 33.33%;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+.game-button:nth-child(1),
+.game-button:nth-child(2),
+.game-button:nth-child(3) {
+  border-top: none;
+  border-bottom: none;
+}
+
+.game-button:nth-child(1),
+.game-button:nth-child(4),
+.game-button:nth-child(7) {
+  border-left: none;
+}
+
+.game-button:nth-child(3),
+.game-button:nth-child(6),
+.game-button:nth-child(9) {
+  border-right: none;
+}
+
+.game-button:nth-child(7),
+.game-button:nth-child(8),
+.game-button:nth-child(9) {
+  border-top: none;
+  border-bottom: none;
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}
+
+.button_text {
+  font-size: 3rem;
+  text-align: center;
 }
