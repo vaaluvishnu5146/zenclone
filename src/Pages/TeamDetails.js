@@ -23,7 +23,6 @@ const playerMock = {
 
 export default function TeamDetails() {
   const [players, setPlayers] = useState([]);
-  const [player, setPlayer] = useState(playerMock);
 
   useEffect(() => {
     setPlayers(getStorage("players"));
@@ -38,38 +37,16 @@ export default function TeamDetails() {
     }
   }
 
-  function handleInput(e) {
-    const { id, value, type } = e.target;
-    let playerDataCopy = {
-      ...player,
-    };
-    if (type === "checkbox") {
-      if (playerDataCopy["skills"].indexOf(id) > -1) {
-        playerDataCopy["skills"] = playerDataCopy["skills"].filter(
-          (s) => s !== id
-        );
-      } else {
-        playerDataCopy["skills"].push(id);
+  function handleAddPlayer(values) {
+    try {
+      let players = JSON.parse(localStorage.getItem("players"));
+      if (values) {
+        players.push(values);
+        handleAddStorage(players);
+        setPlayers(getStorage("players"));
       }
-    } else {
-      playerDataCopy[id] = value;
-    }
-    setPlayer(playerDataCopy);
-  }
-
-  function handleAddPlayer(e) {
-    if (e) {
-      try {
-        let players = JSON.parse(localStorage.getItem("players"));
-        if (players) {
-          players.push(player);
-          setPlayer(playerMock);
-          handleAddStorage(players);
-          setPlayers(getStorage("players"));
-        }
-      } catch (error) {
-        console.log(error);
-      }
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -96,11 +73,7 @@ export default function TeamDetails() {
             </h1>
           </div>
           <div className="col-6 d-flex flex-row-reverse">
-            <SimpleModal
-              data={player}
-              handleChange={handleInput}
-              handleSubmit={handleAddPlayer}
-            />
+            <SimpleModal handleSubmit={handleAddPlayer} />
           </div>
         </div>
         <DataTable data={players} handleDelete={() => {}} />

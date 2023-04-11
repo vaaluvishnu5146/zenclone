@@ -10,7 +10,7 @@ export default function BasicChecks({
   return (
     <div className="form-check form-check-inline">
       <input
-        className="form-check-input"
+        className="form-controll form-check-input"
         type="checkbox"
         value={value}
         id={id}

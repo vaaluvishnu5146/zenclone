@@ -6,7 +6,10 @@ export default function BasicTextField({
   type = "",
   placeholder = "",
   onChange = (e) => {},
+  onBlur = (e) => {},
   value = "",
+  error = "",
+  touched = false,
 }) {
   return (
     <div class="mb-3">
@@ -15,12 +18,26 @@ export default function BasicTextField({
       </label>
       <input
         type={type}
-        class="form-control"
+        className={`form-control ${
+          touched && error ? (error ? "is-invalid" : "is-valid") : null
+        }`}
         id={id}
         placeholder={placeholder}
         onChange={onChange}
+        onBlur={onBlur}
         value={value}
       />
+      <div
+        className={`${
+          touched && error
+            ? error
+              ? "invalid-feedback"
+              : "valid-feedback"
+            : null
+        }`}
+      >
+        {error}
+      </div>
     </div>
   );
 }
